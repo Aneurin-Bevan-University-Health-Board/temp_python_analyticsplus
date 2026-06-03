@@ -1,0 +1,42 @@
+{
+  "name": "Python Analytics+",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11-bullseye",
+  "hostRequirements": {
+    "cpus": 8,
+    "memory": "32gb",
+    "storage": "64gb"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/google-cloud-cli:1": {
+      "version": "latest",
+      "installGkeGcloudAuthPlugin": false
+    },
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.11"
+    }
+  },
+  "postCreateCommand": "pip install -r requirements.txt",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.black-formatter",
+        "ms-toolsai.jupyter",
+        "googlecloudtools.cloudcode",
+        "ms-python.flake8",
+        "ms-toolsai.vscode-jupyter-slideshow"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "editor.formatOnSave": true,
+        "[python]": {
+          "editor.defaultFormatter": "ms-python.black-formatter"
+        }
+      }
+    }
+  },
+  "forwardPorts": [8888, 5000],
+  "remoteEnv": {
+    "PYTHONPATH": "${containerWorkspaceFolder}/src"
+  }
+}

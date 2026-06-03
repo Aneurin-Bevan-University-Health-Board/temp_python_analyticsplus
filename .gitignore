@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Env
+.env
+*.env
+venv/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# GCP credentials - NEVER commit these
+*.json
+service-account*.json
+gcloud-credentials*
+
+# Data
+data/
+*.csv
+*.parquet
+*.xlsx
+*.xls
+
+# MLflow
+mlruns/
+mlartifacts/
+
+# OS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
